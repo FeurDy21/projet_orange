@@ -11,17 +11,19 @@
      
    $fetch=new Site_impl($conn);  
 
-      $table='<option value="0">Select...</option>';
+      $table='<option></option><option id="0" value="0">Tous les sites</option>';
      if($fetch->findAllSite()!=NULL){
      
                 
        foreach ($fetch->findAllSite() as $value) {
-      $table.= '<option id="'.$value["ID_SITE"] .'" value="'.$value["ID_SITE"] .''.' '. ''.$value["NOM"].'">'. $value["NOM"].'</option>';
+      $table.='<option id="'.$value["ID_SITE"].'" value="'.$value["ID_SITE"] .''.' '. ''.$value["NOM"].'">'. $value["NOM"].'</option>';
        }
 
        echo $table;     
     }
 }
+
+
 
 if($_POST['action']=="chargerSalleCheckbox"){
 //retrouver tous les sites pour ensuite les charger dans dans le groupe select
@@ -46,7 +48,7 @@ $salle=new Salle(Array());
 
 
 if($_POST['action']=="chargerSalle"){
-   $table='<option value="0">Select...</option>';
+   $table='<option value="0">Toutes les salles</option>';
   $salle=new Salle(Array());
 
       $searchSall=new Salle_impl($conn);

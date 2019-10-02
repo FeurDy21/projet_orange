@@ -25,7 +25,7 @@ if (isset($_POST['action'])) {
     
     
     
-    //apres avoir controlé les données, on abeuve la classe
+    //apres avoir controlé les données, on aliente la classe
     $expl=new Service(array("designation"=>$nom));
         
      $addexpl=new Service_impl($conn); 
@@ -40,7 +40,7 @@ if (isset($_POST['action'])) {
 
         if($id>0){
         
-        echo 'Operateur ajouté' ;
+        echo 'Operateur ajoutée' ;
         
      } else {
          echo 'ajout echoué';
